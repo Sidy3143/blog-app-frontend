@@ -1,4 +1,4 @@
-# User Blog Frontend
+# User App Frontend
 
 A modern blog application built with React and Vite, featuring user authentication, post management, and real-time comments.
 
@@ -53,3 +53,4 @@ npm run lint
 - Admin post actions
 - Comment system
 - Responsive UI
+
