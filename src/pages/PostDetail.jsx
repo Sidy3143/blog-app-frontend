@@ -4,7 +4,7 @@ import { getComments, createComment, updateComment, deleteComment } from "../api
 import AdminPostActions from "../components/AdminPostActions";
 import { isLoggedIn as authLoggedIn, isAdmin as authIsAdmin } from "../utils/auth";
 
-const API_URL = "http://localhost:3000/blog";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function PostDetail() {
   const { slug } = useParams();
