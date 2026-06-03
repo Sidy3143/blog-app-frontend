@@ -33,7 +33,7 @@ export default function PostDetail() {
 
         const data = await res.json();
 
-        // API returns { post: {...} } or the post directly
+        // API returns { success: true, post: {...} } or the post directly
         setPost(data.post || data);
 
         const commentsData = await getComments(slug);
