@@ -14,9 +14,10 @@ export default function Home() {
     async function loadPosts() {
       try {
         const data = await getPosts();
-        setPosts(data.posts || data);
+        setPosts(data.posts);
         setStatus("success");
       } catch (err) {
+        console.log("Error fetching posts:", err);
         setError(err.message);
         setStatus("error");
       }

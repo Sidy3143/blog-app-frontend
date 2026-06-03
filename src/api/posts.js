@@ -2,12 +2,20 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 export async function getPosts() {
   const res = await fetch(`${API_URL}/posts`);
+  console.log("response", res);
 
   if (!res.ok) {
     throw new Error("Failed to fetch posts");
   }
 
-  return res.json();
+  const data = await res.json();
+  console.log("response data", data.posts);
+
+  if (!data.success) {
+    throw new Error(data.message || "Failed to fetch posts");
+  }
+
+  return data;
 }
 
 export async function createPost({ title, content }, token) {
